@@ -112,8 +112,10 @@ Once `server` and `client` are up and running you should see logs as presented b
 </details>
 
 As you can see from above logs: 
-- the `client` first sent 10 string type messages to the <i><b>channel</b></i> channel, once it's done 
-- the `client` sent next 10 object type messages to second <i><b>object-channel</b></i> channel.
+1. The `client` first sent 10 string messages to the server <i><b>channel</b></i> channel.
+The `server` sent string message back to the `client` for each sent message.
+2. Once it's done `client` sent next 10 object messages to server second <i><b>object-channel</b></i> channel.
+The `server` sent object message back to the `client` for each sent message.
 
 ## Requirements
 - `JDK 17` or higher
