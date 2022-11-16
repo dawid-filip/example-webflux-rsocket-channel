@@ -1,4 +1,4 @@
-package com.pl.df.configuration;
+package com.pl.df.client;
 
 import lombok.Getter;
 import lombok.ToString;

@@ -12,12 +12,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Log4j2
 public class MessageComponent {
 
-    private final int MESSAGE_LIMIT = 20;
+    private final int MESSAGE_LIMIT = 10;
+    private final int MESSAGE_INTERVAL = 200;
+
     private static AtomicInteger messageNumber = new AtomicInteger(1);
     private static AtomicInteger objectMessageNumber = new AtomicInteger(1);
 
     public Flux<String> getClientRequestMessages() {
-        return Flux.interval(Duration.ofMillis(200))
+        return Flux.interval(Duration.ofMillis(MESSAGE_INTERVAL))
                 .map(message -> "channel " + messageNumber.getAndIncrement())
                 .doOnNext(message -> log.info("Sending [" + message + "] message to server."))
                 .take(MESSAGE_LIMIT)
@@ -25,7 +27,7 @@ public class MessageComponent {
     }
 
     public Flux<ObjectMessage> getClientRequestObjectMessages() {
-        return Flux.interval(Duration.ofMillis(200))
+        return Flux.interval(Duration.ofMillis(MESSAGE_INTERVAL))
                 .map(message -> {
                     final Integer number = objectMessageNumber.getAndIncrement();
                     ObjectMessage objectMessage = new ObjectMessage(number, "channel", null);

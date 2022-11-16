@@ -9,7 +9,7 @@ import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
-import static com.pl.df.configuration.MessagePaths.*;
+import static com.pl.df.client.MessagePaths.*;
 
 @Service
 @RequiredArgsConstructor

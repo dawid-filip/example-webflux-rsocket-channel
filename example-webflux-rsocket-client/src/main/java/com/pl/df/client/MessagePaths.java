@@ -1,4 +1,4 @@
-package com.pl.df.configuration;
+package com.pl.df.client;
 
 public enum MessagePaths {
 
