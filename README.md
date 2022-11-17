@@ -117,5 +117,11 @@ The `server` sent string message back to the `client` for each sent message.
 2. Once it's done `client` sent next 10 object messages to server second <i><b>object-channel</b></i> channel.
 The `server` sent object message back to the `client` for each sent message.
 
+``` mermaid
+graph TD;
+    client-->server;
+    server-->client;
+```
+
 ## Requirements
 - `JDK 17` or higher
